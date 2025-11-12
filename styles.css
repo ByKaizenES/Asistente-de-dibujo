@@ -1,0 +1,487 @@
+/*
+ * Asistente de dibujo (cuadrícula) - Landing Page Styles
+ * Copyright © 2025 ByKaizenES
+ */
+
+/* ========================================
+   VARIABLES
+   ======================================== */
+:root {
+    /* Colors - Palette azul noche */
+    --bg-primary: #0D1117;
+    --bg-secondary: #161B22;
+    --bg-card: #1C2128;
+    --accent-blue: #58A6FF;
+    --accent-light: #79C0FF;
+    --accent-bright: #A5D8FF;
+    --neon-blue: #00D4FF;
+    --text-primary: #F0F6FC;
+    --text-secondary: #8B949E;
+    --border: #30363D;
+    
+    /* Shadows */
+    --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 0 20px rgba(88, 166, 255, 0.3);
+    --shadow-neon: 0 0 30px rgba(0, 212, 255, 0.4);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+.header {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    padding: 80px 20px;
+    text-align: center;
+    border-bottom: 2px solid var(--border);
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(90deg, transparent, transparent 49px, var(--border) 49px, var(--border) 50px),
+        repeating-linear-gradient(0deg, transparent, transparent 49px, var(--border) 49px, var(--border) 50px);
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+    border-radius: 24px;
+    box-shadow: var(--shadow-glow);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, var(--accent-light) 0%, var(--neon-blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(88, 166, 255, 0.5);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+.btn-primary {
+    display: inline-block;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--neon-blue) 100%);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: var(--shadow-neon);
+    transition: var(--transition-smooth);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.6);
+}
+
+.btn-donate {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #0070BA;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: var(--transition-smooth);
+    margin-top: 15px;
+}
+
+.btn-donate:hover {
+    background: #005EA6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 112, 186, 0.4);
+}
+
+/* ========================================
+   SECTIONS
+   ======================================== */
+section {
+    padding: 80px 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--accent-light);
+}
+
+.icon-section {
+    color: var(--neon-blue);
+    margin-right: 10px;
+    font-size: 2.5rem;
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+.icon-feature {
+    color: var(--accent-blue);
+    margin-right: 8px;
+    font-size: 1.5rem;
+}
+
+/* ========================================
+   DESCRIPTION SECTION
+   ========================================== */
+.description-section {
+    background: var(--bg-secondary);
+}
+
+.description-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.description-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+.screenshot-container {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.screenshot {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 12px;
+    border: 2px solid var(--border);
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition-smooth);
+}
+
+.screenshot:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-glow);
+    border-color: var(--accent-blue);
+}
+
+.screenshot-caption {
+    margin-top: 15px;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.feature-title {
+    font-size: 1.8rem;
+    color: var(--accent-blue);
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.feature-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+
+.feature-list li {
+    padding: 12px 0 12px 30px;
+    position: relative;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.feature-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--neon-blue);
+    font-size: 1.2rem;
+}
+
+.steps-list {
+    counter-reset: step-counter;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+
+.steps-list li {
+    counter-increment: step-counter;
+    padding: 15px 0 15px 50px;
+    position: relative;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.steps-list li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 32px;
+    height: 32px;
+    background: var(--accent-blue);
+    color: var(--bg-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    box-shadow: var(--shadow-glow);
+}
+
+/* ========================================
+   SUPPORT SECTION
+   ======================================== */
+.support-section {
+    background: var(--bg-primary);
+}
+
+.support-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.support-text {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.support-card {
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 16px;
+    border: 2px solid var(--border);
+    box-shadow: var(--shadow-medium);
+}
+
+.coffee-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.support-card h3 {
+    font-size: 2rem;
+    color: var(--accent-blue);
+    margin-bottom: 15px;
+}
+
+.support-card p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* ========================================
+   SOCIAL SECTION
+   ======================================== */
+.social-section {
+    background: var(--bg-secondary);
+}
+
+.social-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: var(--transition-smooth);
+    gap: 10px;
+}
+
+.social-link:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-blue);
+    box-shadow: var(--shadow-glow);
+}
+
+.social-link svg {
+    transition: var(--transition-smooth);
+}
+
+.social-link.twitter:hover {
+    border-color: #1DA1F2;
+}
+
+.social-link.twitter:hover svg {
+    color: #1DA1F2;
+}
+
+.social-link.instagram:hover {
+    border-color: #E4405F;
+}
+
+.social-link.instagram:hover svg {
+    color: #E4405F;
+}
+
+.social-link.youtube:hover {
+    border-color: #FF0000;
+}
+
+.social-link.youtube:hover svg {
+    color: #FF0000;
+}
+
+.social-link.github:hover {
+    border-color: var(--accent-light);
+}
+
+.social-link.github:hover svg {
+    color: var(--accent-light);
+}
+
+.social-link span {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+    background: var(--bg-primary);
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 2px solid var(--border);
+}
+
+.footer p {
+    color: var(--text-secondary);
+    margin: 5px 0;
+}
+
+.footer-note {
+    color: var(--accent-blue);
+    font-size: 0.95rem;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .feature-title {
+        font-size: 1.5rem;
+    }
+    
+    .social-links {
+        grid-template-columns: 1fr;
+    }
+    
+    section {
+        padding: 60px 20px;
+    }
+    
+    .support-card {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+    
+    .logo {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .header {
+        padding: 60px 20px;
+    }
+}
